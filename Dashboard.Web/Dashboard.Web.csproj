@@ -43,7 +43,6 @@
     <ProjectReference Include="..\Dashboard.Common\Dashboard.Common.csproj" />
     <ProjectReference Include="..\Dashboard.Facade\Dashboard.Facade.csproj" />
     <ProjectReference Include="..\Dashboard.Models\Dashboard.Models.csproj" />
-    <ProjectReference Include="..\WebApiWrapper\WebApiWrapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
