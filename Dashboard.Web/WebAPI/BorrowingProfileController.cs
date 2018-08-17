@@ -7,7 +7,7 @@ using Dashboard.Models.BorrowingProfile.ViewModels;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Swagger.Net.Annotations;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Dashboard.Web.WebAPI
 {
