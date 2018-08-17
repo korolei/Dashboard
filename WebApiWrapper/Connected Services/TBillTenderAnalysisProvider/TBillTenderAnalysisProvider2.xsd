@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DealerRankingsParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DealerRankingsParameter" nillable="true" type="tns:DealerRankingsParameter" />
+  <xs:complexType name="ArrayOfDealerRanking">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DealerRanking" nillable="true" type="tns:DealerRanking" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDealerRanking" nillable="true" type="tns:ArrayOfDealerRanking" />
+  <xs:complexType name="DealerRanking">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmtBid" type="xs:double" />
+      <xs:element minOccurs="0" name="AmtWon" type="xs:double" />
+      <xs:element minOccurs="0" name="CP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumBid" type="xs:int" />
+      <xs:element minOccurs="0" name="NumWon" type="xs:int" />
+      <xs:element minOccurs="0" name="RankValue" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DealerRanking" nillable="true" type="tns:DealerRanking" />
+</xs:schema>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="BorrowingProfileParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IncludeCPP" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeOIIC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowingProfileParameter" nillable="true" type="tns:BorrowingProfileParameter" />
+  <xs:complexType name="ArrayOfBorrowingProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BorrowingProfile" nillable="true" type="tns:BorrowingProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBorrowingProfile" nillable="true" type="tns:ArrayOfBorrowingProfile" />
+  <xs:complexType name="BorrowingProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Consolidated" type="xs:double" />
+      <xs:element minOccurs="0" name="Deals" type="xs:int" />
+      <xs:element minOccurs="0" name="OEFC" type="xs:double" />
+      <xs:element minOccurs="0" name="PercentBorrowed" type="xs:double" />
+      <xs:element minOccurs="0" name="Profile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowingProfile" nillable="true" type="tns:BorrowingProfile" />
+  <xs:complexType name="BorrowingTradeDetailsParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DealID" type="xs:int" />
+      <xs:element minOccurs="0" name="EnableCpp" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableOiic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProfileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowingTradeDetailsParameter" nillable="true" type="tns:BorrowingTradeDetailsParameter" />
+  <xs:complexType name="ArrayOfBorrowingTradeDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BorrowingTradeDetails" nillable="true" type="tns:BorrowingTradeDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBorrowingTradeDetails" nillable="true" type="tns:ArrayOfBorrowingTradeDetails" />
+  <xs:complexType name="BorrowingTradeDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Coupon" type="xs:double" />
+      <xs:element minOccurs="0" name="FaceVal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HedgeCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HedgeInterest" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HedgeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TradeNum" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowingTradeDetails" nillable="true" type="tns:BorrowingTradeDetails" />
+  <xs:complexType name="BorrowingProfileDealParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IncludeCPP" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeOIIC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Profile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowingProfileDealParameter" nillable="true" type="tns:BorrowingProfileDealParameter" />
+  <xs:complexType name="ArrayOfBorrowingProfileDeal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BorrowingProfileDeal" nillable="true" type="tns:BorrowingProfileDeal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBorrowingProfileDeal" nillable="true" type="tns:ArrayOfBorrowingProfileDeal" />
+  <xs:complexType name="BorrowingProfileDeal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Consolidated" type="xs:double" />
+      <xs:element minOccurs="0" name="DealID" type="xs:int" />
+      <xs:element minOccurs="0" name="Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Market" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OEFC" type="xs:double" />
+      <xs:element minOccurs="0" name="PercentBorrowed" type="xs:double" />
+      <xs:element minOccurs="0" name="Profile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" type="xs:double" />
+      <xs:element minOccurs="0" name="TradeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Trades" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowingProfileDeal" nillable="true" type="tns:BorrowingProfileDeal" />
+  <xs:complexType name="ArrayOfBorrowingProfileHedges">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BorrowingProfileHedges" nillable="true" type="tns:BorrowingProfileHedges" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBorrowingProfileHedges" nillable="true" type="tns:ArrayOfBorrowingProfileHedges" />
+  <xs:complexType name="BorrowingProfileHedges">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Consolidated" type="xs:double" />
+      <xs:element minOccurs="0" name="Deals" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OEFC" type="xs:double" />
+      <xs:element minOccurs="0" name="Province" type="xs:double" />
+      <xs:element minOccurs="0" name="SubProgram" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowingProfileHedges" nillable="true" type="tns:BorrowingProfileHedges" />
+</xs:schema>

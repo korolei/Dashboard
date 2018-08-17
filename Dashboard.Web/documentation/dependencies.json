@@ -1,0 +1,880 @@
+[
+  {
+    "name": "AppRoutingModule",
+    "file": "src/app/app-routing.module.ts",
+    "providers": [
+      {
+        "name": "AppCustomPreloader"
+      }
+    ],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forRoot(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 517,
+        "end": 577,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 517,
+          "end": 527,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 528,
+          "end": 577,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 530,
+              "end": 576,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 530,
+                "end": 550,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 530,
+                  "end": 542,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 543,
+                  "end": 550,
+                  "flags": 0,
+                  "escapedText": "forRoot"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 551,
+                  "end": 557,
+                  "flags": 0,
+                  "escapedText": "routes"
+                },
+                {
+                  "pos": 558,
+                  "end": 575,
+                  "flags": 0,
+                  "kind": 183,
+                  "properties": [
+                    {
+                      "pos": 560,
+                      "end": 574,
+                      "flags": 0,
+                      "kind": 269,
+                      "name": {
+                        "pos": 560,
+                        "end": 568,
+                        "flags": 0,
+                        "escapedText": "useHash"
+                      },
+                      "initializer": {
+                        "pos": 569,
+                        "end": 574,
+                        "flags": 0,
+                        "kind": 101
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 578,
+        "end": 604,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 578,
+          "end": 588,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 589,
+          "end": 604,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 591,
+              "end": 603,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 605,
+        "end": 638,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 605,
+          "end": 617,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 618,
+          "end": 638,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 619,
+              "end": 637,
+              "flags": 0,
+              "escapedText": "AppCustomPreloader"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AppModule",
+    "file": "src/app/app.module.ts",
+    "providers": [
+      {
+        "name": "AppService"
+      },
+      {
+        "name": "ConfigurationService"
+      },
+      {
+        "name": "{ provide: APP_INITIALIZER, useFactory: (configService) => {}, deps: [ConfigurationService], multi:  }"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "AppComponent",
+        "file": "src/app/app.component.ts",
+        "selector": "app-root",
+        "providers": [],
+        "templateUrl": [
+          "app.component.html"
+        ],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 472,
+            "end": 495,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 472,
+              "end": 483,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 484,
+              "end": 495,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-root"
+            }
+          },
+          {
+            "pos": 496,
+            "end": 534,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 496,
+              "end": 510,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 511,
+              "end": 534,
+              "flags": 0,
+              "kind": 9,
+              "text": "./app.component.html"
+            }
+          }
+        ]
+      },
+      {
+        "name": "HeaderComponent"
+      },
+      {
+        "name": "FooterComponent"
+      },
+      {
+        "name": "DashboardItemsComponent"
+      }
+    ],
+    "imports": [
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "ns": "NgbModule",
+        "name": "NgbModule.forRoot()"
+      },
+      {
+        "ns": "Ng4LoadingSpinnerModule",
+        "name": "Ng4LoadingSpinnerModule.forRoot()"
+      },
+      {
+        "name": "FormsModule"
+      },
+      {
+        "name": "ReactiveFormsModule"
+      },
+      {
+        "name": "HttpClientModule"
+      },
+      {
+        "name": "AppRoutingModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "pos": 924,
+        "end": 1034,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 924,
+          "end": 939,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 940,
+          "end": 1034,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 942,
+              "end": 959,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            },
+            {
+              "pos": 960,
+              "end": 980,
+              "flags": 0,
+              "escapedText": "HeaderComponent"
+            },
+            {
+              "pos": 981,
+              "end": 1001,
+              "flags": 0,
+              "escapedText": "FooterComponent"
+            },
+            {
+              "pos": 1002,
+              "end": 1030,
+              "flags": 0,
+              "escapedText": "DashboardItemsComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 1035,
+        "end": 1220,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1035,
+          "end": 1045,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 1046,
+          "end": 1220,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 1048,
+              "end": 1066,
+              "flags": 0,
+              "escapedText": "BrowserModule"
+            },
+            {
+              "pos": 1067,
+              "end": 1091,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 1067,
+                "end": 1089,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 1067,
+                  "end": 1081,
+                  "flags": 0,
+                  "escapedText": "NgbModule"
+                },
+                "name": {
+                  "pos": 1082,
+                  "end": 1089,
+                  "flags": 0,
+                  "escapedText": "forRoot"
+                }
+              },
+              "arguments": []
+            },
+            {
+              "pos": 1092,
+              "end": 1130,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 1092,
+                "end": 1128,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 1092,
+                  "end": 1120,
+                  "flags": 0,
+                  "escapedText": "Ng4LoadingSpinnerModule"
+                },
+                "name": {
+                  "pos": 1121,
+                  "end": 1128,
+                  "flags": 0,
+                  "escapedText": "forRoot"
+                }
+              },
+              "arguments": []
+            },
+            {
+              "pos": 1131,
+              "end": 1147,
+              "flags": 0,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 1148,
+              "end": 1172,
+              "flags": 0,
+              "escapedText": "ReactiveFormsModule"
+            },
+            {
+              "pos": 1173,
+              "end": 1194,
+              "flags": 0,
+              "escapedText": "HttpClientModule"
+            },
+            {
+              "pos": 1195,
+              "end": 1216,
+              "flags": 0,
+              "escapedText": "AppRoutingModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 1221,
+        "end": 1694,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1221,
+          "end": 1233,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 1234,
+          "end": 1694,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 1236,
+              "end": 1251,
+              "flags": 0,
+              "escapedText": "AppService"
+            },
+            {
+              "pos": 1252,
+              "end": 1369,
+              "flags": 0,
+              "escapedText": "ConfigurationService"
+            },
+            {
+              "pos": 1370,
+              "end": 1693,
+              "flags": 0,
+              "kind": 183,
+              "multiLine": true,
+              "properties": [
+                {
+                  "pos": 1376,
+                  "end": 1525,
+                  "flags": 0,
+                  "kind": 269,
+                  "name": {
+                    "pos": 1376,
+                    "end": 1508,
+                    "flags": 0,
+                    "escapedText": "provide"
+                  },
+                  "initializer": {
+                    "pos": 1509,
+                    "end": 1525,
+                    "flags": 0,
+                    "escapedText": "APP_INITIALIZER"
+                  }
+                },
+                {
+                  "pos": 1526,
+                  "end": 1634,
+                  "flags": 0,
+                  "kind": 269,
+                  "name": {
+                    "pos": 1526,
+                    "end": 1542,
+                    "flags": 0,
+                    "escapedText": "useFactory"
+                  },
+                  "initializer": {
+                    "pos": 1543,
+                    "end": 1634,
+                    "flags": 0,
+                    "kind": 192,
+                    "modifierFlagsCache": 536870912,
+                    "parameters": [
+                      {
+                        "pos": 1545,
+                        "end": 1580,
+                        "flags": 0,
+                        "kind": 148,
+                        "name": {
+                          "pos": 1545,
+                          "end": 1558,
+                          "flags": 0,
+                          "escapedText": "configService"
+                        },
+                        "type": {
+                          "pos": 1559,
+                          "end": 1580,
+                          "flags": 0,
+                          "kind": 161,
+                          "typeName": {
+                            "pos": 1559,
+                            "end": 1580,
+                            "flags": 0,
+                            "escapedText": "ConfigurationService"
+                          }
+                        }
+                      }
+                    ],
+                    "equalsGreaterThanToken": {
+                      "pos": 1581,
+                      "end": 1584,
+                      "flags": 0,
+                      "kind": 36
+                    },
+                    "body": {
+                      "pos": 1584,
+                      "end": 1634,
+                      "flags": 0,
+                      "kind": 192,
+                      "modifierFlagsCache": 536870912,
+                      "parameters": [],
+                      "equalsGreaterThanToken": {
+                        "pos": 1594,
+                        "end": 1597,
+                        "flags": 0,
+                        "kind": 36
+                      },
+                      "body": {
+                        "pos": 1597,
+                        "end": 1634,
+                        "flags": 0,
+                        "kind": 186,
+                        "expression": {
+                          "pos": 1597,
+                          "end": 1632,
+                          "flags": 0,
+                          "kind": 184,
+                          "expression": {
+                            "pos": 1597,
+                            "end": 1611,
+                            "flags": 0,
+                            "escapedText": "configService"
+                          },
+                          "name": {
+                            "pos": 1612,
+                            "end": 1632,
+                            "flags": 0,
+                            "escapedText": "loadGlobalConfigData"
+                          }
+                        },
+                        "arguments": []
+                      }
+                    }
+                  }
+                },
+                {
+                  "pos": 1635,
+                  "end": 1669,
+                  "flags": 0,
+                  "kind": 269,
+                  "name": {
+                    "pos": 1635,
+                    "end": 1645,
+                    "flags": 0,
+                    "escapedText": "deps"
+                  },
+                  "initializer": {
+                    "pos": 1646,
+                    "end": 1669,
+                    "flags": 0,
+                    "kind": 182,
+                    "elements": [
+                      {
+                        "pos": 1648,
+                        "end": 1668,
+                        "flags": 0,
+                        "escapedText": "ConfigurationService"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "pos": 1670,
+                  "end": 1687,
+                  "flags": 0,
+                  "kind": 269,
+                  "name": {
+                    "pos": 1670,
+                    "end": 1681,
+                    "flags": 0,
+                    "escapedText": "multi"
+                  },
+                  "initializer": {
+                    "pos": 1682,
+                    "end": 1687,
+                    "flags": 0,
+                    "kind": 101
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 1695,
+        "end": 1723,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1695,
+          "end": 1707,
+          "flags": 0,
+          "escapedText": "bootstrap"
+        },
+        "initializer": {
+          "pos": 1708,
+          "end": 1723,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 1710,
+              "end": 1722,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "BorrowingProfileModule",
+    "file": "app/borrowing-profile/borrowing-profile.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "BorrowingProfileComponent",
+        "file": "app/borrowing-profile/borrowing-profile.component.ts",
+        "selector": "app-borrowing-profile",
+        "providers": [],
+        "templateUrl": [
+          "borrowing-profile.component.html"
+        ],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 808,
+            "end": 844,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 808,
+              "end": 819,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 820,
+              "end": 844,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-borrowing-profile"
+            }
+          },
+          {
+            "pos": 845,
+            "end": 897,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 845,
+              "end": 859,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 860,
+              "end": 897,
+              "flags": 0,
+              "kind": 9,
+              "text": "./borrowing-profile.component.html"
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "FormsModule"
+      },
+      {
+        "name": "ReactiveFormsModule"
+      },
+      {
+        "name": "WjCoreModule"
+      },
+      {
+        "name": "WjGridModule"
+      },
+      {
+        "name": "WjChartModule"
+      },
+      {
+        "name": "WjInputModule"
+      },
+      {
+        "name": "WjGridDetailModule"
+      },
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 689,
+        "end": 899,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 689,
+          "end": 699,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 700,
+          "end": 899,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 702,
+              "end": 719,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 720,
+              "end": 736,
+              "flags": 0,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 737,
+              "end": 761,
+              "flags": 0,
+              "escapedText": "ReactiveFormsModule"
+            },
+            {
+              "pos": 762,
+              "end": 779,
+              "flags": 0,
+              "escapedText": "WjCoreModule"
+            },
+            {
+              "pos": 780,
+              "end": 797,
+              "flags": 0,
+              "escapedText": "WjGridModule"
+            },
+            {
+              "pos": 798,
+              "end": 816,
+              "flags": 0,
+              "escapedText": "WjChartModule"
+            },
+            {
+              "pos": 817,
+              "end": 835,
+              "flags": 0,
+              "escapedText": "WjInputModule"
+            },
+            {
+              "pos": 836,
+              "end": 859,
+              "flags": 0,
+              "escapedText": "WjGridDetailModule"
+            },
+            {
+              "pos": 860,
+              "end": 894,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 860,
+                "end": 886,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 860,
+                  "end": 877,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 878,
+                  "end": 886,
+                  "flags": 0,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 887,
+                  "end": 893,
+                  "flags": 0,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 900,
+        "end": 926,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 900,
+          "end": 910,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 911,
+          "end": 926,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 913,
+              "end": 925,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 927,
+        "end": 979,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 927,
+          "end": 942,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 943,
+          "end": 979,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 945,
+              "end": 975,
+              "flags": 0,
+              "escapedText": "BorrowingProfileComponent"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

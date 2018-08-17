@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TimePeriodInterval">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IndividualUnit" />
+      <xs:enumeration value="Day" />
+      <xs:enumeration value="Week" />
+      <xs:enumeration value="Month" />
+      <xs:enumeration value="Quarter" />
+      <xs:enumeration value="FiscalYear" />
+      <xs:enumeration value="CalendarYear" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TimePeriodInterval" nillable="true" type="tns:TimePeriodInterval" />
+</xs:schema>

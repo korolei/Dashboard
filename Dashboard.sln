@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiWrapper", "WebApiWrapper\WebApiWrapper.csproj", "{C94C1330-ADBD-4035-94A4-169AAA04E3AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Common", "Dashboard.Common\Dashboard.Common.csproj", "{1A96BB89-CAF2-4634-9F58-81DCF7F7650B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Web", "Dashboard.Web\Dashboard.Web.csproj", "{368D7877-8AC0-4516-8982-C937ECD14077}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Models", "Dashboard.Models\Dashboard.Models.csproj", "{86BD33DA-9F05-4126-AE7C-DA918423E919}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Facade", "Dashboard.Facade\Dashboard.Facade.csproj", "{E02E02F3-3A6A-4293-8CFA-14590739946A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5CB5D8CD-959A-46E4-B841-B0C99E6B8C0F}"
+	ProjectSection(SolutionItems) = preProject
+		..\Dependencies Graph.png = ..\Dependencies Graph.png
+		MossySettings.sql = MossySettings.sql
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Tests", "Dashboard.Tests\Dashboard.Tests.csproj", "{491613CB-ADE6-4CC1-B976-E11C4150DA73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfaSoaWithStsServer", "OfaSoaWithStsServer\OfaSoaWithStsServer.csproj", "{C3232043-1B94-443C-BB6F-BCD4B741677B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C94C1330-ADBD-4035-94A4-169AAA04E3AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94C1330-ADBD-4035-94A4-169AAA04E3AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94C1330-ADBD-4035-94A4-169AAA04E3AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94C1330-ADBD-4035-94A4-169AAA04E3AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A96BB89-CAF2-4634-9F58-81DCF7F7650B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A96BB89-CAF2-4634-9F58-81DCF7F7650B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A96BB89-CAF2-4634-9F58-81DCF7F7650B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A96BB89-CAF2-4634-9F58-81DCF7F7650B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368D7877-8AC0-4516-8982-C937ECD14077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368D7877-8AC0-4516-8982-C937ECD14077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368D7877-8AC0-4516-8982-C937ECD14077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368D7877-8AC0-4516-8982-C937ECD14077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86BD33DA-9F05-4126-AE7C-DA918423E919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BD33DA-9F05-4126-AE7C-DA918423E919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86BD33DA-9F05-4126-AE7C-DA918423E919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86BD33DA-9F05-4126-AE7C-DA918423E919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E02E02F3-3A6A-4293-8CFA-14590739946A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E02E02F3-3A6A-4293-8CFA-14590739946A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E02E02F3-3A6A-4293-8CFA-14590739946A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E02E02F3-3A6A-4293-8CFA-14590739946A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{491613CB-ADE6-4CC1-B976-E11C4150DA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{491613CB-ADE6-4CC1-B976-E11C4150DA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{491613CB-ADE6-4CC1-B976-E11C4150DA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{491613CB-ADE6-4CC1-B976-E11C4150DA73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3232043-1B94-443C-BB6F-BCD4B741677B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3232043-1B94-443C-BB6F-BCD4B741677B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3232043-1B94-443C-BB6F-BCD4B741677B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3232043-1B94-443C-BB6F-BCD4B741677B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC8D3A52-D7E8-4491-BA82-E63BDB66AAAF}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ofatfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WebApiWrapper\\WebApiWrapper.csproj
+		SccProjectName1 = WebApiWrapper
+		SccLocalPath1 = WebApiWrapper
+		SccProjectUniqueName2 = Dashboard.Common\\Dashboard.Common.csproj
+		SccProjectName2 = Dashboard.Common
+		SccLocalPath2 = Dashboard.Common
+		SccProjectUniqueName3 = Dashboard.Web\\Dashboard.Web.csproj
+		SccProjectName3 = Dashboard.Web
+		SccLocalPath3 = Dashboard.Web
+		SccProjectUniqueName4 = Dashboard.Models\\Dashboard.Models.csproj
+		SccProjectName4 = Dashboard.Models
+		SccLocalPath4 = Dashboard.Models
+		SccProjectUniqueName5 = Dashboard.Facade\\Dashboard.Facade.csproj
+		SccProjectName5 = Dashboard.Facade
+		SccLocalPath5 = Dashboard.Facade
+		SccProjectUniqueName6 = Dashboard.Tests\\Dashboard.Tests.csproj
+		SccProjectName6 = Dashboard.Tests
+		SccLocalPath6 = Dashboard.Tests
+		SccProjectUniqueName7 = OfaSoaWithStsServer\\OfaSoaWithStsServer.csproj
+		SccProjectName7 = OfaSoaWithStsServer
+		SccLocalPath7 = OfaSoaWithStsServer
+	EndGlobalSection
+EndGlobal

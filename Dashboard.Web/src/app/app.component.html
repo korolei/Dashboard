@@ -1,0 +1,19 @@
+<!-- src/app/app.component.html -->
+<div class="layout-overflow">
+    <div
+      class="layout-canvas"
+      [ngClass]="{'nav-open': navOpen, 'nav-closed': !navOpen}"
+      [style.min-height]="minHeight">
+      <ng4-loading-spinner> </ng4-loading-spinner>
+      <!-- HEADER -->
+      <app-header></app-header>
+
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+  
+      <!-- FOOTER -->
+      <app-footer></app-footer>
+  
+    </div> <!-- /.layout-canvas -->
+  </div> <!-- /.layout-overflow -->

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c39019c8-e77d-4bdc-b24e-a7633c4bd8b5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/ITSService/TBillTenderAnalysisProvider.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TBillTenderAnalysisProvider.xsd" MetadataType="Schema" ID="36f0904b-82b9-42f5-a0bf-6ffd20bfd790" SourceId="1" SourceUrl="https://localhost/ITSService/TBillTenderAnalysisProvider.svc?xsd=xsd0" />
+    <MetadataFile FileName="TBillTenderAnalysisProvider1.xsd" MetadataType="Schema" ID="edb1dbed-ac01-4f05-8f62-777c4f0c2990" SourceId="1" SourceUrl="https://localhost/ITSService/TBillTenderAnalysisProvider.svc?xsd=xsd1" />
+    <MetadataFile FileName="TBillTenderAnalysisProvider2.xsd" MetadataType="Schema" ID="050e4228-1601-4cd3-845b-0a3dd9906b24" SourceId="1" SourceUrl="https://localhost/ITSService/TBillTenderAnalysisProvider.svc?xsd=xsd2" />
+    <MetadataFile FileName="TBillTenderAnalysisProvider.wsdl" MetadataType="Wsdl" ID="22fd999d-3b5d-457b-bd6f-760053988a84" SourceId="1" SourceUrl="https://localhost/ITSService/TBillTenderAnalysisProvider.svc?wsdl" />
+    <MetadataFile FileName="TBillTenderAnalysisProvider.disco" MetadataType="Disco" ID="1b3b1a5f-8273-4aba-8745-21b909f80347" SourceId="1" SourceUrl="https://localhost/ITSService/TBillTenderAnalysisProvider.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

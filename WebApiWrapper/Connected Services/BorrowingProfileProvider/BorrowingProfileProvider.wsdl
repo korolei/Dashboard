@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BorrowingProfileProvider" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IBorrowingProfileProvider_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://localhost/ITSService/BorrowingProfileProvider.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://localhost/ITSService/BorrowingProfileProvider.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost/ITSService/BorrowingProfileProvider.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingProfiles" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingTradeDetailsByDeal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingTradeDetailsByDeal" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingTradeDetailsByDeal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingTradeDetailsByDealResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingTradeDetailsByProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingTradeDetailsByProfile" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingTradeDetailsByProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingTradeDetailsByProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingDeals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingDeals" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingDeals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingDealsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingTargets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingTargets" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingTargets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingTargetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingProfileHedges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingProfileHedges" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingProfileHedges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingProfileHedgesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingDealHedges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingDealHedges" />
+  </wsdl:message>
+  <wsdl:message name="IBorrowingProfileProvider_GetBorrowingDealHedges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowingDealHedgesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBorrowingProfileProvider">
+    <wsdl:operation name="GetBorrowingProfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingProfiles" message="tns:IBorrowingProfileProvider_GetBorrowingProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingProfilesResponse" message="tns:IBorrowingProfileProvider_GetBorrowingProfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingTradeDetailsByDeal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTradeDetailsByDeal" message="tns:IBorrowingProfileProvider_GetBorrowingTradeDetailsByDeal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTradeDetailsByDealResponse" message="tns:IBorrowingProfileProvider_GetBorrowingTradeDetailsByDeal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingTradeDetailsByProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTradeDetailsByProfile" message="tns:IBorrowingProfileProvider_GetBorrowingTradeDetailsByProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTradeDetailsByProfileResponse" message="tns:IBorrowingProfileProvider_GetBorrowingTradeDetailsByProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingDeals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingDeals" message="tns:IBorrowingProfileProvider_GetBorrowingDeals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingDealsResponse" message="tns:IBorrowingProfileProvider_GetBorrowingDeals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingTargets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTargets" message="tns:IBorrowingProfileProvider_GetBorrowingTargets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTargetsResponse" message="tns:IBorrowingProfileProvider_GetBorrowingTargets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingProfileHedges">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingProfileHedges" message="tns:IBorrowingProfileProvider_GetBorrowingProfileHedges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingProfileHedgesResponse" message="tns:IBorrowingProfileProvider_GetBorrowingProfileHedges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingDealHedges">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingDealHedges" message="tns:IBorrowingProfileProvider_GetBorrowingDealHedges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingDealHedgesResponse" message="tns:IBorrowingProfileProvider_GetBorrowingDealHedges_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IBorrowingProfileProvider" type="tns:IBorrowingProfileProvider">
+    <wsp:PolicyReference URI="#WSHttpBinding_IBorrowingProfileProvider_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBorrowingProfiles">
+      <soap12:operation soapAction="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingProfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingTradeDetailsByDeal">
+      <soap12:operation soapAction="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTradeDetailsByDeal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingTradeDetailsByProfile">
+      <soap12:operation soapAction="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTradeDetailsByProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingDeals">
+      <soap12:operation soapAction="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingDeals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingTargets">
+      <soap12:operation soapAction="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingTargets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingProfileHedges">
+      <soap12:operation soapAction="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingProfileHedges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowingDealHedges">
+      <soap12:operation soapAction="http://tempuri.org/IBorrowingProfileProvider/GetBorrowingDealHedges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BorrowingProfileProvider">
+    <wsdl:port name="WSHttpBinding_IBorrowingProfileProvider" binding="tns:WSHttpBinding_IBorrowingProfileProvider">
+      <soap12:address location="https://localhost/ITSService/BorrowingProfileProvider.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://localhost/ITSService/BorrowingProfileProvider.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/12075-4900-D400.ofina.on.ca</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

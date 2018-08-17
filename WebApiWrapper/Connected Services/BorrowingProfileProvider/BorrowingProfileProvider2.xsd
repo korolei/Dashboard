@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/ITSService/BorrowingProfileProvider.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" />
+  <xs:element name="GetBorrowingProfiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="parameters" nillable="true" type="q1:BorrowingProfileParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingProfilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="GetBorrowingProfilesResult" nillable="true" type="q2:ArrayOfBorrowingProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingTradeDetailsByDeal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="parameters" nillable="true" type="q3:BorrowingTradeDetailsParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingTradeDetailsByDealResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="GetBorrowingTradeDetailsByDealResult" nillable="true" type="q4:ArrayOfBorrowingTradeDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingTradeDetailsByProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="parameters" nillable="true" type="q5:BorrowingTradeDetailsParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingTradeDetailsByProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="GetBorrowingTradeDetailsByProfileResult" nillable="true" type="q6:ArrayOfBorrowingTradeDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingDeals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="parameters" nillable="true" type="q7:BorrowingProfileDealParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingDealsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="GetBorrowingDealsResult" nillable="true" type="q8:ArrayOfBorrowingProfileDeal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingTargets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fiscalYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingTargetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="GetBorrowingTargetsResult" nillable="true" type="q9:BorrowingProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingProfileHedges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="parameters" nillable="true" type="q10:BorrowingProfileParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingProfileHedgesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="GetBorrowingProfileHedgesResult" nillable="true" type="q11:ArrayOfBorrowingProfileHedges" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingDealHedges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="parameters" nillable="true" type="q12:BorrowingProfileDealParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowingDealHedgesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Ofa.Moss.ITSService" minOccurs="0" name="GetBorrowingDealHedgesResult" nillable="true" type="q13:ArrayOfBorrowingProfileHedges" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

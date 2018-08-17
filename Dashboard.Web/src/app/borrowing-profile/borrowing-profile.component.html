@@ -1,0 +1,199 @@
+<div class="clearfix">
+  <h5 class="display-5">{{configService?.borrowingProfileConfig?.applicationName}}</h5>
+</div>
+<div>
+<form [formGroup]="filterFormGroup" *ngIf="filterFormGroup" (ngSubmit)="postFilterData()" novalidate>
+  <div class="form-group form-inline wj-context-menu" *ngIf="data_vm?.filter">
+    <span class="col-3 form-inline">
+      <div class="btn-group btn-group-toggle" ngbRadioGroup>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="display" ng-selected="displayType===displayTypes[0].value"
+            [value]="displayTypes[0].value" [(ngModel)]="displayType">
+          <label ngbButtonLabel class="space-right2"> - {{displayTypes[0].title}} View</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="display" ng-selected="displayType===displayTypes[1].value"
+            [value]="displayTypes[1].value" [(ngModel)]="displayType">
+          <label ngbButtonLabel class="space space-left2 clearfix"> - {{displayTypes[1].title}} View</label>
+        </div>
+      </div>
+    </span>
+    <span class="col-4 form-inline ">
+      <div class="btn-group btn-group-toggle" ngbCheckBoxGroup>
+        <div class="form-check form-check-inline float-right">
+          <input type="checkbox" [(ngModel)]="data_vm.filter.includeCpp" formControlName="includeCpp" class="form-control mb-2 mr-sm-2"
+            id="inlineFormIncludeCpp">
+          <label ngbButtonLabel class="space-right2"> - Include CPP</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" [(ngModel)]="data_vm.filter.includeOiic" formControlName="includeOiic" class="form-control mb-2 mr-sm-2"
+            id="inlineFormIncludeOiic">
+          <label ngbButtonLabel class="space-right2">- Include OIIC</label>
+        </div>
+      </div>
+    </span>
+    <span class="col-3 form-inline">
+      <label for="inlineFormInputGroupDisplayMode">Fiscal Year: </label>
+      <wj-combo-box [itemsSource]="data_vm.fiscals" [showDropDownButton]="true" formControlName="startFiscalYear" class="wj-dropdown" 
+        [selectedValue]="data_vm.filter.startFiscalYear" [selectedValuePath]="'startCalendarYear'" [displayMemberPath]="'displayYear'" [isEditable]="false">
+      </wj-combo-box>
+    </span>
+    <span class="col-2 form-inline">
+      <button class="btn btn-outline-primary float-right">Get data</button>
+    </span>
+  </div>
+
+</form>
+<div class="App-panel" *ngIf="displayType===displayTypes[0].value">
+  <wj-flex-grid #profilesGrid [itemsSource]="data_vm?.profiles" [selectionMode]="'None'" [isReadOnly]="true" 
+  [headersVisibility]="'Column'" [allowSorting]="false" [quickAutoSize]="true" [showAlternatingRows]="true">
+    <wj-flex-grid-column [header]="'Profile'" [binding]="'profileName'" [width]="'*'" [maxWidth]="300">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+        <span (click)="getTrades(item.profileName, 0, tradesModal)" style="cursor:pointer">
+          <img src="../../assets/images/eye-black.png" /> &nbsp;{{item.profileName}}
+        </span>
+      </ng-template>
+    </wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'# Deals'" [binding]="'deals'" [width]="'*'" [maxWidth]="100">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+        <span (click)="getProfileDeals(item.profileName, dealsModal)" style="cursor:pointer" 
+        *ngIf="item.deals>0; else noDeals">
+          <img src="../../assets/images/eye-black.png" />&nbsp;{{item.deals}}</span>
+        <ng-template #noDeals>
+          <img src="../../assets/images/eye-white.png" />&nbsp;N/A</ng-template>
+      </ng-template>
+    </wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'Province'" [binding]="'provinceAmount'" [format]="'0.00'" [width]="'*'" [maxWidth]="200"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'OEFC'" [binding]="'oefcAmount'"[width]="'*'" [maxWidth]="200"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'Consolidated'" [binding]="'consolidatedAmount'"[width]="'*'" [maxWidth]="200"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'% of Total'" [binding]="'percentBorrowed'" [width]="'*'" [maxWidth]="100">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+        <span *ngIf="item.percentBorrowed > 0; else NA">{{item.percentBorrowed}}</span>
+        <ng-template #NA>N/A</ng-template>
+      </ng-template>
+    </wj-flex-grid-column>
+  </wj-flex-grid>
+
+  <wj-flex-grid [itemsSource]="data_vm?.profilesTotals" [selectionMode]="'None'" [headersVisibility]="'None'"
+  [isReadOnly]="true" >
+    <wj-flex-grid-column [binding]="'profileName'" [width]="'*'" [maxWidth]="300"></wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'deals'" [width]="'*'" [maxWidth]="100">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+        <span *ngIf="item.deals > 0; else noDeals">{{item.deals}}</span>
+        <ng-template #noDeals>N/A</ng-template>
+      </ng-template>
+    </wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'provinceAmount'" [width]="'*'" [maxWidth]="200">
+        <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+          <span [ngStyle]="isAheadOfPace(item.provinceAmount,item.profileName)">
+            {{item.provinceAmount | number:'0.1-2'}}</span>
+        </ng-template>
+    </wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'oefcAmount'"[width]="'*'" [maxWidth]="200">
+        <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+            <span [ngStyle]="isAheadOfPace(item.oefcAmount,item.profileName)">
+              {{item.oefcAmount | number:'0.1-2'}}</span>
+          </ng-template>
+    </wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'consolidatedAmount'" [width]="'*'" [maxWidth]="200">
+        <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+            <span [ngStyle]="isAheadOfPace(item.consolidatedAmount,item.profileName)">
+              {{item.consolidatedAmount | number:'0.1-2'}}</span>
+          </ng-template>
+    </wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'percentBorrowed'" [width]="'*'" [maxWidth]="100">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+        <span *ngIf="item.percentBorrowed > 0; else NA">
+          {{item.percentBorrowed | number : '1.0-0'}}</span>
+        <ng-template #NA>N/A</ng-template>
+      </ng-template>
+    </wj-flex-grid-column>
+  </wj-flex-grid>
+
+  <wj-flex-grid [itemsSource]="data_vm?.hedges" [headersVisibility]="'None'" [selectionMode]="'None'" [isReadOnly]="true">
+    <wj-flex-grid-column [binding]="'profileName'" [width]="'*'" [maxWidth]="300"></wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'deals'"[width]="'*'" [maxWidth]="100">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+        <span *ngIf="item.deals > 0; else noDeals">{{item.deals}}</span>
+        <ng-template #noDeals>N/A</ng-template>
+      </ng-template>
+    </wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'provinceAmount'" [width]="'*'" [maxWidth]="200"></wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'oefcAmount'" [width]="'*'" [maxWidth]="200"></wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'consolidatedAmount'" [width]="'*'" [maxWidth]="200"></wj-flex-grid-column>
+    <wj-flex-grid-column [binding]="'percentBorrowed'"[width]="'*'" [maxWidth]="100">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+        <span *ngIf="item.percentBorrowed > 0; else NA">{{item.percentBorrowed}}</span>
+        <ng-template #NA>N/A</ng-template>
+      </ng-template>
+    </wj-flex-grid-column>
+  </wj-flex-grid>
+</div>
+
+<div *ngIf="displayType===displayTypes[1].value">
+  <wj-flex-pie #profilesChart [itemsSource]="data_vm?.profiles" [binding]="'provinceAmount'" [bindingName]="'profileName'"
+    [header]="'Borrowing Profiles'" [selectionMode]="'Point'" (selectionChanged)="selectionChanged(profilesChart, tradesModal)">
+    <wj-flex-chart-legend [position]="'Bottom'"></wj-flex-chart-legend>
+  </wj-flex-pie>
+
+</div>
+</div>
+<ng-template #tradesModal class="modal fade" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">{{profileDetails?.profileName}}</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <wj-flex-grid [itemsSource]="profileDetails.trades" *ngIf="profileDetails?.trades" [selectionMode]="'None'" [isReadOnly]="true"
+      [headersVisibility]="'Column'" [sortRowIndex]="1">
+      <wj-flex-grid-column [header]="'Trade #'" [binding]="'tradeNum'">
+        <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+          <a target="_blank" href="{{configService?.globalConfig?.debtTicketViewerUrl}}{{item.tradeNum}}" 
+          style="cursor:pointer">{{item.tradeNum}}</a>
+        </ng-template>
+      </wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'Trade Date'" [binding]="'tradeDate'" [quickAutoSize]="true">
+        <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+          {{item.tradeDate | date }}
+        </ng-template>
+      </wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'Series'" [binding]="'series'"></wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'Description'" [binding]="'description'" [width]="'*'"></wj-flex-grid-column>
+    </wj-flex-grid>
+  </div>
+</ng-template>
+
+<ng-template #dealsModal class="modal fade" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">{{profileName}}</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <wj-flex-grid [itemsSource]="profileDeals?.deals" [selectionMode]="'ListBox'" [isReadOnly]="true" [headersVisibility]="'Column'" (initialized)="addFooterRow(flexGrid)"  #flexGrid>
+      <wj-flex-grid-column [header]="'Deal'" [binding]="'description'" [width]="'*'" [quickAutoSize]="true" 
+       [minWidth]="300">
+        <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+          <span (click)="getTrades(item.profileName, item.dealId, tradesModal)" style="cursor:pointer">
+            {{item.description}}
+          </span>
+        </ng-template>
+      </wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'Trade Date'" [binding]="'tradeDate'">
+        <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-item="item">
+          {{item.tradeDate | date }}
+        </ng-template>
+      </wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'Province'" [binding]="'provinceAmount'" [format]="'n0'" [aggregate]="'Sum'"></wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'OEFC'" [binding]="'oefcAmount'" [format]="'n0'"></wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'Consolidated'" [binding]="'consolidatedAmount'" [format]="'n0'" [aggregate]="'Sum'"></wj-flex-grid-column>
+      <wj-flex-grid-column [header]="'% of Total'" [binding]="'percentBorrowed'" [aggregate]="'Sum'"></wj-flex-grid-column>
+    </wj-flex-grid>
+  </div>
+</ng-template>
+
+<p>All values converted to CAD as of delivery date.
+  <br> Data displayed current as of {{todayDate | date}}</p>

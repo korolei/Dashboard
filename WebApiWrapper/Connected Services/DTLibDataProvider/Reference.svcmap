@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6a5cb295-113c-4540-9a66-78780e118f38" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/ITSService/DTLibProvider.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DTLibProvider.xsd" MetadataType="Schema" ID="52f26ce3-7fb2-43c5-a98d-af4c6e556f3c" SourceId="1" SourceUrl="https://localhost/ITSService/DTLibProvider.svc?xsd=xsd3" />
+    <MetadataFile FileName="DTLibProvider1.xsd" MetadataType="Schema" ID="4bfcf170-b57b-4de0-98d1-97cb6d9a2ab6" SourceId="1" SourceUrl="https://localhost/ITSService/DTLibProvider.svc?xsd=xsd1" />
+    <MetadataFile FileName="DTLibProvider.wsdl" MetadataType="Wsdl" ID="e30ef1d3-a96f-4f4c-96c4-661d3b59a5be" SourceId="1" SourceUrl="https://localhost/ITSService/DTLibProvider.svc?wsdl" />
+    <MetadataFile FileName="DTLibProvider2.xsd" MetadataType="Schema" ID="7fcb1716-158e-4fdf-9431-b29eeaec0e6d" SourceId="1" SourceUrl="https://localhost/ITSService/DTLibProvider.svc?xsd=xsd2" />
+    <MetadataFile FileName="DTLibProvider3.xsd" MetadataType="Schema" ID="242434eb-7cc3-40b3-bbbf-9f0199c238b9" SourceId="1" SourceUrl="https://localhost/ITSService/DTLibProvider.svc?xsd=xsd0" />
+    <MetadataFile FileName="DTLibProvider.disco" MetadataType="Disco" ID="434baa95-0628-414b-96b9-a9f68b377482" SourceId="1" SourceUrl="https://localhost/ITSService/DTLibProvider.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

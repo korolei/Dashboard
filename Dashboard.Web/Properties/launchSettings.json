@@ -1,0 +1,34 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": true,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "https://localhost/Dashboard",
+      "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "https://localhost:44317/",
+      "sslPort": 44317
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:44317/",
+      "environmentVariables": {
+        "ASPNETCORE_HTTPS_PORT": "44317",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Profile": {
+      "commandName": "IISExpress",
+      "workingDirectory": "C:\\Projects\\InvalidOperation\\Applications\\HTML5\\Dashboard-DEV-Core\\Dashboard\\Dashboard.Web\\bin\\Debug\\netcoreapp2.0\\publish",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost/Dashboard",
+      "environmentVariables": {
+        "ASPNETCORE_DEVELOPMENT": "Development"
+      }
+    }
+  }
+}
